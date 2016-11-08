@@ -7,11 +7,19 @@ class MyStack
   end
 
   def push(item)
+    @stack << item
+    self.top = item
   end
 
   def pop
+    raise "stack is empty" if empty?
+    item = self.top
+    @stack.slice!(@stack.length -1)
+    self.top = @stack.last
+    item
   end
 
   def empty?
+    @stack.nil?
   end
 end
