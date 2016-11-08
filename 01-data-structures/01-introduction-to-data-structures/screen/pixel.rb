@@ -14,8 +14,8 @@ class Pixel
     self.red = validate_color(red)
     self.green = validate_color(green)
     self.blue = validate_color(blue)
-    self x = x
-    self y = y
+    @x = x
+    @y = y
   end
 
   private
@@ -27,6 +27,7 @@ class Pixel
       return 255
     else
       return color
+    end
   end
 
 end

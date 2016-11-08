@@ -13,7 +13,7 @@ class Screen
 
   # Insert a Pixel at x, y
   def insert(pixel, x, y)
-    self.matrix[x][y] = pixel
+    inbounds(x,y) ? self.matrix[x][y] = pixel : nil
   end
 
   def at(x, y)
@@ -23,7 +23,7 @@ class Screen
   private
 
   def inbounds(x, y)
-    (x > 0 || y > 0)
+    ((x <= width || x > 0) || (y <= height || y > 0))
   end
 
 end
