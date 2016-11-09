@@ -1,0 +1,12 @@
+How does your data structure allow developers to access and manipulate the data?
+	Join allows a person to be added at the end
+	Leave uses slice to remove a person at the index of the person leaving
+	front give the value of the first person 
+	middle divides the length by 2 then rounds the number, so it will be a whole numer, and gives that persons name
+	back uses last to get the last person
+	serach uses include?  which give a true or false, if true, it returns the person otherwise nill
+
+If a developer wanted to find a specific element in your data structure, how would you search for it?
+	by using search
+What other real-world data can each structure represent?
+	Can be used in any instance there is a list of items that won't be arrange, except for removing, and adding things to the end.  A Todo list, a shopping list, ect would all be examples

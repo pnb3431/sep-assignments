@@ -1,0 +1,9 @@
+How does your data structure allow developers to access and manipulate the data?
+Mutli demensional array
+allows to have pixel color information at a specific spot on a screen.  Checks to make sure that the constraint being passed, are within the requirments. 
+
+If a developer wanted to find a specific element in your data structure, how would you search for it?
+at(x, y)
+
+What other real-world data can each structure represent?
+anything with an x y axis.  
