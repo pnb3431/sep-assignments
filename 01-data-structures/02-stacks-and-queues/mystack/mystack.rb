@@ -20,6 +20,6 @@ class MyStack
   end
 
   def empty?
-    @stack.nil?
+    @stack.length == 0
   end
 end
