@@ -1,0 +1,13 @@
+What is Spatial Locality and why does it benefit performance?
+	If a location of memory is referenced, it figures that areas around that area will be referenced soon, so the area around is also pulled.  This benefits performance by not having to go to memory agian. 
+
+
+             user     system      total        real
+create array  0.010000   0.010000   0.020000 (  0.001179)
+add to linked list  0.000000   0.000000   0.000000 (  0.008123)
+find in array  0.000000   0.000000   0.000000 (  0.000003)
+find in linked list  0.010000   0.000000   0.010000 (  0.000882)
+delete from array  0.000000   0.000000   0.000000 (  0.000015)
+delete from linked list  0.000000   0.000000   0.000000 (  0.003227)
+
+It looks like it takes longer with a linked list.

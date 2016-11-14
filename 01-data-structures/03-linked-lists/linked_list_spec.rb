@@ -3,6 +3,10 @@ include RSpec
 require_relative 'node'
 require_relative 'linked_list'
 
+
+
+
+
 RSpec.describe LinkedList, type: Class do
   let(:n1) { Node.new("Rob") }
   let(:n2) { Node.new("Ben") }
