@@ -14,12 +14,9 @@ class LinkedList
 
   # This method creates a new `Node` using `data`, and inserts it at the end of the list.
   def add_to_tail(node)
-    if @head === nil && @tail === nil
+    if @head.nil?
       @head = node
       @tail = @head
-      @tail.next = nil
-    elsif @tail === nil
-      @tail = node
       @tail.next = nil
     else
       @tail.next = node
@@ -31,25 +28,40 @@ class LinkedList
 
   # This method removes the last node in the lists and must keep the rest of the list intact.
   def remove_tail
-    if @head === @tail
-      @tail.next = nil
-      @tail = nil
-      @head.next = nil
-      @head = nil
-    elsif @head.next === @tail
-      @tail = @head
-      @tail.next = nil
-    else
-      @head = @head.next
+    unless head.nil?
+      if @head === @tail
+        @tail.next = nil
+        @tail = nil
+        @head.next = nil
+        @head = nil
+      elsif @head.next === @tail
+        @tail = @head
+        @tail.next = nil
+      else
+        previous = @head
+        current = @head.next
+        until current === nil
+        if current === @tail
+          @tail = previous
+          @tail.next = nil
+          break  
+        elsif current != @tail
+          previous.next = current.next
+          break
+        else
+          previous = current
+          current = current.next
+        end
+      end
     end  
   end
 
   # This method prints out a representation of the list.
   def print
-    
-    while @head != nil
-      puts @head.data
-      @head = @head.next
+    current = @head
+    while current != nil
+      puts current.data  
+      current = current.next
     end
   end
 
@@ -82,14 +94,13 @@ class LinkedList
 
   # This method adds `node` to the front of the list and must set the list's head to `node`.
   def add_to_front(node)
-    if @head === node && @tail === node
+    if @head.nil?
       @head = node
       @tail = @head
       @tail.next = nil
     else
-      temp = @head
+      node.next = @head
       @head = node
-      @head.next = temp
     end
   end
 
